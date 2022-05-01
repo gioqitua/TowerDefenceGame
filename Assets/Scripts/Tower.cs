@@ -64,6 +64,6 @@ public class Tower : MonoBehaviour
     private float CalculateDistanceToEnemy()
     {
         float distance = Vector3.Distance(this.transform.position, enemyTarget.transform.position);
-        return distance;
+        return distance; 
     }
 }
