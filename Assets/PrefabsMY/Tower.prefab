@@ -50,6 +50,7 @@ MonoBehaviour:
   enemyTarget: {fileID: 0}
   shootRange: 3
   bulletParticles: {fileID: 1436217823}
+  currentWaypoint: {fileID: 0}
 --- !u!1001 &1396255000676686560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,11 +148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1396255001442675668}
     m_Modifications:
-    - target: {fileID: 1396255001364561772, guid: d67a1bb452f76de4fba61914b886fffd,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6955704362454442526, guid: d67a1bb452f76de4fba61914b886fffd,
         type: 3}
       propertyPath: m_RootOrder

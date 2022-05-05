@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField][Range(0.1f, 20f)] float spawnInterval = 2f;
     [SerializeField] EnemyHealth enemyPrefab;
+    [SerializeField] AudioClip spawnSound;
     bool canSpawn = true;
 
     void Start()
@@ -18,7 +19,12 @@ public class EnemySpawner : MonoBehaviour
     {
         while (canSpawn)
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            GetComponent<AudioSource>().PlayOneShot(spawnSound);
+            var enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+            
+
+            enemy.transform.parent = transform;
 
             yield return new WaitForSeconds(spawnInterval);
         }

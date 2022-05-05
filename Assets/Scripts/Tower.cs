@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-
 [SelectionBase]
 public class Tower : MonoBehaviour
 {
@@ -11,6 +6,10 @@ public class Tower : MonoBehaviour
     [SerializeField] Transform enemyTarget;
     [SerializeField] float shootRange = 10f;
     [SerializeField] ParticleSystem bulletParticles;
+    [SerializeField] ParticleSystem flashParticles;
+    [SerializeField] ParticleSystem bulletShellsParticle;
+
+    public Waypoint currentWaypoint;
     void Update()
     {
         Shoot();
@@ -59,11 +58,15 @@ public class Tower : MonoBehaviour
         topTower.LookAt(enemyTarget);
         var emission = bulletParticles.emission;
         emission.enabled = isActive;
+        var flash = flashParticles.emission;
+        flash.enabled = isActive;
+        var shells = bulletShellsParticle.emission;
+        shells.enabled = isActive;
     }
 
     private float CalculateDistanceToEnemy()
     {
         float distance = Vector3.Distance(this.transform.position, enemyTarget.transform.position);
-        return distance; 
+        return distance;
     }
 }

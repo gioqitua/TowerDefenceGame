@@ -151,6 +151,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullets_Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 6585731183097568534, guid: 86d8ec7498007b84db64f1983da8c256,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585731183097568534, guid: 86d8ec7498007b84db64f1983da8c256,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585731183097568534, guid: 86d8ec7498007b84db64f1983da8c256,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585731183097568534, guid: 86d8ec7498007b84db64f1983da8c256,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585731183097568534, guid: 86d8ec7498007b84db64f1983da8c256,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d8ec7498007b84db64f1983da8c256, type: 3}
 --- !u!4 &1396255001364561774 stripped

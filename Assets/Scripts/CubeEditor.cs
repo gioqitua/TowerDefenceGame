@@ -16,7 +16,6 @@ public class CubeEditor : MonoBehaviour
         SnapToGrid();
 
         SetText();
-
     }
 
     private void SetText()

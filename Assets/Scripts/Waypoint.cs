@@ -11,7 +11,8 @@ public class Waypoint : MonoBehaviour
     [SerializeField] public bool isChecked = false;
     const int gridSize = 1;
     Vector2Int gridPos;
-    [SerializeField] GameObject towerPrefab;
+    [SerializeField] public GameObject oldrenderer;
+
     public bool canPlaceTower = true;
 
     public Vector2Int GetGridPos()
@@ -36,8 +37,7 @@ public class Waypoint : MonoBehaviour
     {
         if (canPlaceTower)
         {
-            Instantiate(towerPrefab, transform.position, Quaternion.identity);
-            canPlaceTower = false;
+            TowerPool.Instance.AddTower(this);
         }
         else
         {

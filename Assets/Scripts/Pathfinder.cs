@@ -5,29 +5,52 @@ using UnityEngine;
 
 public class Pathfinder : MonoBehaviour
 {
-
+    [SerializeField] GameObject enemyPathBlockPrefab;
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
-    public List<Waypoint> path = new List<Waypoint>();
+    List<Waypoint> path = new List<Waypoint>();
     Queue<Waypoint> queue = new Queue<Waypoint>();
     [SerializeField] bool isPathFinderRunning = true;
     [SerializeField] Waypoint startPoint, finishPoint;
     Waypoint searchPoint;
+    [SerializeField] float enemyPathYThreshhold = 0.9f;
+
     Vector2Int[] directions = {
         Vector2Int.up,
         Vector2Int.right,
         Vector2Int.down,
         Vector2Int.left
     };
+
     public List<Waypoint> GetPath()
     {
+        
         if (path.Count == 0)
         {
             LoadBlocks();
-            SetStartEndColor();
+
             PathFind();
+
             CreatePath();
+
+            ChangePathPrefab();
         }
         return path;
+    }
+    void ChangePathPrefab()
+    {
+        foreach (var waypoint in path)
+        {
+            var pointToInstantiate = waypoint.transform.position;
+
+            pointToInstantiate = new Vector3(pointToInstantiate.x, pointToInstantiate.y - enemyPathYThreshhold, pointToInstantiate.z);
+
+            var newPrefab = Instantiate(enemyPathBlockPrefab, pointToInstantiate, Quaternion.identity);
+
+            newPrefab.transform.parent = gameObject.transform;
+
+            waypoint.oldrenderer.SetActive(false);
+
+        }
     }
 
     void CreatePath()
@@ -38,7 +61,6 @@ public class Pathfinder : MonoBehaviour
 
         while (previousPoint != startPoint)
         {
-            previousPoint.SetTopColor(Color.grey);
             path.Add(previousPoint);
             previousPoint.canPlaceTower = false;
             previousPoint = previousPoint.exploredFrom;  // ;)))))
@@ -98,11 +120,7 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    private void SetStartEndColor()
-    {
-        startPoint.SetTopColor(Color.red);
-        finishPoint.SetTopColor(Color.green);
-    }
+
 
     private void LoadBlocks()
     {

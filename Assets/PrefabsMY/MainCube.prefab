@@ -45,7 +45,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303523119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0,0
+  m_text: 3,1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -320,8 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exploredFrom: {fileID: 0}
   isChecked: 0
-  towerPrefab: {fileID: 1396255001442675675, guid: ed15fca11eca22a4090ed11df40cd554,
-    type: 3}
+  oldrenderer: {fileID: 7807905729911000016}
   canPlaceTower: 1
 --- !u!65 &1304707903
 BoxCollider:
@@ -347,6 +346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348584283556720138, guid: 383f59afd5a8758488f14989d80f535a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2380921420054919497, guid: 383f59afd5a8758488f14989d80f535a,
         type: 3}
@@ -423,6 +427,12 @@ PrefabInstance:
 --- !u!4 &6910450152007949459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2380921420054919497, guid: 383f59afd5a8758488f14989d80f535a,
+    type: 3}
+  m_PrefabInstance: {fileID: 9145793410199168474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7807905729911000016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1348584283556720138, guid: 383f59afd5a8758488f14989d80f535a,
     type: 3}
   m_PrefabInstance: {fileID: 9145793410199168474}
   m_PrefabAsset: {fileID: 0}
