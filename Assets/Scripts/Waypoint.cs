@@ -32,6 +32,10 @@ public class Waypoint : MonoBehaviour
         topMeshRenderer.material.color = color;
 
     }
+    private void Update()
+    {
+        if (Input.touchCount != 0) OnMouseDown();
+    }
 
     private void OnMouseDown()
     {
