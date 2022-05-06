@@ -10,6 +10,11 @@ public class UI_System : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Debug.LogWarning("more than 1 UI_System in scene");
+            return;
+        }
         Instance = this;
     }
     void Start()

@@ -23,7 +23,7 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
-        
+
         if (path.Count == 0)
         {
             LoadBlocks();
@@ -40,15 +40,18 @@ public class Pathfinder : MonoBehaviour
     {
         foreach (var waypoint in path)
         {
-            var pointToInstantiate = waypoint.transform.position;
+            if (waypoint != finishPoint)
+            {
+                var pointToInstantiate = waypoint.transform.position;
 
-            pointToInstantiate = new Vector3(pointToInstantiate.x, pointToInstantiate.y - enemyPathYThreshhold, pointToInstantiate.z);
+                pointToInstantiate = new Vector3(pointToInstantiate.x, pointToInstantiate.y - enemyPathYThreshhold, pointToInstantiate.z);
 
-            var newPrefab = Instantiate(enemyPathBlockPrefab, pointToInstantiate, Quaternion.identity);
+                var newPrefab = Instantiate(enemyPathBlockPrefab, pointToInstantiate, Quaternion.identity);
 
-            newPrefab.transform.parent = gameObject.transform;
+                newPrefab.transform.parent = gameObject.transform;
 
-            waypoint.oldrenderer.SetActive(false);
+                waypoint.oldrenderer.SetActive(false);
+            }
 
         }
     }

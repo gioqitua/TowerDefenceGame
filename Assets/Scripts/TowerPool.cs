@@ -13,9 +13,13 @@ public class TowerPool : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Debug.LogWarning("more than 1 TowerPool in scene");
+            return;
+        }
         Instance = this;
     }
-
     public void AddTower(Waypoint waypoint)
     {
         if (towerQueue.Count < maxTowerCount)
@@ -51,6 +55,5 @@ public class TowerPool : MonoBehaviour
         waypoint.canPlaceTower = false;
         tower.currentWaypoint = waypoint;
         towerQueue.Enqueue(tower);
-
     }
 }

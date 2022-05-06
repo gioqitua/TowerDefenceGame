@@ -45,7 +45,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303523119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5,-1
+  m_text: 7,2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -189,7 +189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6009127019607801612
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1303523121}
   waypoint: {fileID: 1520124422768809060}
+  setText: 1
 --- !u!114 &1520124422768809060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +322,8 @@ MonoBehaviour:
   exploredFrom: {fileID: 0}
   isChecked: 0
   oldrenderer: {fileID: 7807905729911000016}
+  cubePrefabs: []
+  yThreshhold: -0.5
   canPlaceTower: 1
 --- !u!65 &1304707903
 BoxCollider:
@@ -422,6 +425,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3594670221513905473, guid: 383f59afd5a8758488f14989d80f535a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85ad49bc300b62c41a33912bcbb80191, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 383f59afd5a8758488f14989d80f535a, type: 3}
 --- !u!4 &6910450152007949459 stripped

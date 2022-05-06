@@ -20,9 +20,8 @@ public class EnemySpawner : MonoBehaviour
         while (canSpawn)
         {
             GetComponent<AudioSource>().PlayOneShot(spawnSound);
-            var enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-
             
+            var enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);            
 
             enemy.transform.parent = transform;
 

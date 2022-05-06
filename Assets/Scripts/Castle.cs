@@ -20,6 +20,11 @@ public class Castle : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Debug.LogWarning("more than 1 castle in scene");
+            return;
+        }
         Instance = this;
     }
     float CalculateHealthPercentage()

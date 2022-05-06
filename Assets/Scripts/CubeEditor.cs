@@ -10,17 +10,16 @@ public class CubeEditor : MonoBehaviour
     [SerializeField] TMP_Text coordinates;
     [SerializeField] Waypoint waypoint;
     Vector3 gridPos;
-
+    [SerializeField] bool setText = false;
     void Update()
     {
         SnapToGrid();
-
-        SetText();
+        if (setText) SetText(); 
     }
 
     private void SetText()
     {
-        string cubeCoordinates = waypoint.GetGridPos().x+","+waypoint.GetGridPos().y;
+        string cubeCoordinates = waypoint.GetGridPos().x + "," + waypoint.GetGridPos().y;
 
         gameObject.name = cubeCoordinates;
 
@@ -29,8 +28,8 @@ public class CubeEditor : MonoBehaviour
 
     private void SnapToGrid()
     {
-        var gridSize = waypoint.GetGridSize();       
+        var gridSize = waypoint.GetGridSize();
 
-        transform.position = new Vector3 (waypoint.GetGridPos().x,0f,waypoint.GetGridPos().y);
+        transform.position = new Vector3(waypoint.GetGridPos().x, 0f, waypoint.GetGridPos().y);
     }
 }
