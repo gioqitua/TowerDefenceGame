@@ -142,6 +142,6 @@ public class Pathfinder : MonoBehaviour
                 grid.Add(gridPos, waypoint);
             }
         }
-        Debug.Log("Block Count : " + grid.Count);
+
     }
 }

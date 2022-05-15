@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] AudioClip enemyDestroySoundFx;
     [SerializeField] GameObject healthbarUI;
     [SerializeField] Slider healthBarSlider;
+    [SerializeField] int scoreWhenKilled = 1;
     float maxHealth;
 
     AudioSource audioSource;
@@ -40,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(enemyDestroySoundFx, Camera.main.transform.position);
             DestroyEnemy(dieParticle);
-            UI_System.Instance.SetScore();
+            UI_System.Instance.SetScore(scoreWhenKilled);
         }
     }
     public void DestroyEnemy(ParticleSystem fx)

@@ -7,8 +7,8 @@ public class TowerPool : MonoBehaviour
 {
     public static TowerPool Instance;
     [SerializeField] Tower towerPrefab;
-    [SerializeField] int maxTowerCount = 4;
-    Queue<Tower> towerQueue = new Queue<Tower>();
+    [SerializeField] public int maxTowerCount = 3;
+    public Queue<Tower> towerQueue = new Queue<Tower>();
 
 
     private void Awake()
@@ -30,9 +30,12 @@ public class TowerPool : MonoBehaviour
         {
             MoveTowerToNewPos(waypoint);
         }
-
     }
-
+    public void SetMaxTowerCount(int countToadd)
+    {
+        maxTowerCount += countToadd;
+        UI_System.Instance.SetTotalTowerText(towerQueue.Count, maxTowerCount);
+    }
     private void MoveTowerToNewPos(Waypoint newWaypoint)
     {
         Tower oldTower = towerQueue.Dequeue();
@@ -46,6 +49,7 @@ public class TowerPool : MonoBehaviour
         oldTower.currentWaypoint = newWaypoint;
 
         towerQueue.Enqueue(oldTower);
+        UI_System.Instance.SetTotalTowerText(towerQueue.Count, maxTowerCount);
     }
 
     private void CreateTower(Waypoint waypoint)
@@ -55,5 +59,6 @@ public class TowerPool : MonoBehaviour
         waypoint.canPlaceTower = false;
         tower.currentWaypoint = waypoint;
         towerQueue.Enqueue(tower);
+        UI_System.Instance.SetTotalTowerText(towerQueue.Count, maxTowerCount);
     }
 }

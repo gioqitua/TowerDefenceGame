@@ -7,20 +7,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] ParticleSystem towerExplosionParticle;
     EnemyHealth enemyHealth;
     [SerializeField] Pathfinder pathfinder;
-    [SerializeField] float enemySpeed = 1f;
+    [SerializeField] float stemToWait = 1f;
     [SerializeField] float stepSpeed = 1f;
-
     Vector3 targetPos;
 
     private void Start()
     {
-        enemyHealth = GetComponent<EnemyHealth>();
-        
-        // pathfinder = FindObjectOfType<Pathfinder>();
+        enemyHealth = GetComponent<EnemyHealth>(); 
 
         pathfinder = this.transform.parent.GetComponent<Pathfinder>();
 
         var path = pathfinder.GetPath();
+
         StartCoroutine(Move(path));
     }
     private void Update()
@@ -33,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.LookAt(waypoint.transform);
             targetPos = waypoint.transform.position;
-            yield return new WaitForSeconds(enemySpeed);
+            yield return new WaitForSeconds(stemToWait);
         }
         enemyHealth.DestroyEnemy(towerExplosionParticle);
         Castle.Instance.GetDamage();

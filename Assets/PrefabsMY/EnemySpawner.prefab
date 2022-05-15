@@ -53,9 +53,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 4
-  enemyPrefab: {fileID: 7037660330749558731, guid: 65fd253da8f3e754b807f22fbf103c42,
-    type: 3}
   spawnSound: {fileID: 8300000, guid: 55163ab5b39f22f4e988da5b87f352f7, type: 3}
+  enemys:
+  - {fileID: 9124941943955539510, guid: 65fd253da8f3e754b807f22fbf103c42, type: 3}
+  - {fileID: 3611380560277822530, guid: 1303f6ef2faf01847a7821760be96f14, type: 3}
+  - {fileID: 3902478480386663695, guid: 24299677d31cca047bf6242884494128, type: 3}
+  bossPrefab: {fileID: 4243708413566790938, guid: 2bce3d199af5bef4c9a7d8110e1d9797,
+    type: 3}
 --- !u!82 &5710065487584888311
 AudioSource:
   m_ObjectHideFlags: 0
@@ -285,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc99e92f49ce0344bbc99c798e3db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxYRotationSpeed: 5
+  maxYRotationSpeed: 15
   randomSpeed: 0
 --- !u!1001 &5710065487281706259
 PrefabInstance:
@@ -380,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc99e92f49ce0344bbc99c798e3db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxYRotationSpeed: 5
+  maxYRotationSpeed: 15
   randomSpeed: 0
 --- !u!1001 &5710065487308773235
 PrefabInstance:
@@ -469,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc99e92f49ce0344bbc99c798e3db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxYRotationSpeed: 5
+  maxYRotationSpeed: 15
   randomSpeed: 0
 --- !u!4 &5710065487309110759 stripped
 Transform:
@@ -564,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc99e92f49ce0344bbc99c798e3db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxYRotationSpeed: 5
+  maxYRotationSpeed: 15
   randomSpeed: 0
 --- !u!4 &5710065487452104994 stripped
 Transform:
@@ -665,5 +669,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc99e92f49ce0344bbc99c798e3db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxYRotationSpeed: 5
+  maxYRotationSpeed: 15
   randomSpeed: 0

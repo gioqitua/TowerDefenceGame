@@ -18,22 +18,19 @@ public class Waypoint : MonoBehaviour
 
     public bool canPlaceTower = true;
 
-    private void Start()
-    {
+    // private void Start()
+    // {
+    //     if (cubePrefabs.Count > 1) ChangePrefabWithRandom();
+    // }
 
-        if (cubePrefabs.Count > 1) ChangePrefabWithRandom();
-    }
+    // private void ChangePrefabWithRandom()
+    // {
+    //     var currentPrefabIndex = UnityEngine.Random.Range(0, cubePrefabs.Count);
+    //     var newPos = new Vector3(transform.position.x, transform.position.y + yThreshhold, transform.position.z);
+    //     Instantiate(cubePrefabs[currentPrefabIndex], newPos, Quaternion.identity);
 
-    private void ChangePrefabWithRandom()
-    {
-
-
-        var currentPrefabIndex = UnityEngine.Random.Range(0, cubePrefabs.Count);
-        var newPos = new Vector3(transform.position.x, transform.position.y + yThreshhold, transform.position.z);
-        Instantiate(cubePrefabs[currentPrefabIndex], newPos, Quaternion.identity);
-
-        Debug.Log("Prefabs Changed");
-    }
+    //     Debug.Log("Prefabs Changed");
+    // }
 
     public Vector2Int GetGridPos()
     {

@@ -10,7 +10,7 @@ public class CubeEditor : MonoBehaviour
     [SerializeField] TMP_Text coordinates;
     [SerializeField] Waypoint waypoint;
     Vector3 gridPos;
-    [SerializeField] bool setText = false;
+    [SerializeField] bool setText = false; //turn off onRelease (High Gc Alloc)
     void Update()
     {
         SnapToGrid();

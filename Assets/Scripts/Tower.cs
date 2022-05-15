@@ -8,13 +8,12 @@ public class Tower : MonoBehaviour
     [SerializeField] ParticleSystem bulletParticles;
     [SerializeField] ParticleSystem flashParticles;
     [SerializeField] ParticleSystem bulletShellsParticle;
-
     public Waypoint currentWaypoint;
+
     void Update()
     {
         Shoot();
     }
-
     private void Shoot()
     {
         SetTargetEnemy();
@@ -27,10 +26,8 @@ public class Tower : MonoBehaviour
             Fire(false);
         }
     }
-
     private void SetTargetEnemy()
     {
-
         var allEnemys = FindObjectsOfType<Enemy>();
         if (allEnemys.Length == 0) return;
 
@@ -41,7 +38,6 @@ public class Tower : MonoBehaviour
         }
         enemyTarget = closestEnemy;
     }
-
     private Transform GetClosestEnemy(Transform enemyA, Transform enemyB)
     {
         var distToA = Vector3.Distance(enemyA.position, transform.position);
@@ -52,7 +48,6 @@ public class Tower : MonoBehaviour
         }
         return enemyB;
     }
-
     private void Fire(bool isActive)
     {
         topTower.LookAt(enemyTarget);
@@ -63,7 +58,6 @@ public class Tower : MonoBehaviour
         var shells = bulletShellsParticle.emission;
         shells.enabled = isActive;
     }
-
     private float CalculateDistanceToEnemy()
     {
         float distance = Vector3.Distance(this.transform.position, enemyTarget.transform.position);
