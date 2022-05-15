@@ -4309,6 +4309,7 @@ GameObject:
   - component: {fileID: 653374999}
   - component: {fileID: 653374998}
   - component: {fileID: 653375002}
+  - component: {fileID: 653375003}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4419,6 +4420,19 @@ MonoBehaviour:
   totalTowers: {fileID: 827595444}
   buyButtonText: {fileID: 407916586}
   money: 0
+  Tower1Button: {fileID: 0}
+--- !u!114 &653375003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653374997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f6652e942dbe34389cf7576bc03ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &659381507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12930,6 +12944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Castle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377263104160903505, guid: 31d7d061b6904d541af0035cd8f1e242,
+        type: 3}
+      propertyPath: castleHealth
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6941667293967782156, guid: 31d7d061b6904d541af0035cd8f1e242,
         type: 3}

@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Castle : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Castle : MonoBehaviour
     [SerializeField] AudioClip castleDamageSoundFX;
     [SerializeField] GameObject healthbarUI;
     [SerializeField] Slider healthBarSlider;
+
     AudioSource audioSource;
     float maxHealth;
     private void Start()
@@ -16,6 +18,7 @@ public class Castle : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         maxHealth = castleHealth;
         healthBarSlider.value = CalculateHealthPercentage();
+
     }
 
     private void Awake()
@@ -48,6 +51,9 @@ public class Castle : MonoBehaviour
     }
     private void GameOver()
     {
+
+        UnityAds.ShowInterstitialAds();
+        SceneManager.LoadScene(0);
         Debug.Log("Game Over");
     }
 }

@@ -37,7 +37,27 @@ public class CameraControlls : MonoBehaviour
             Camera.main.transform.position += direction;
         }
         Zoom(Input.GetAxis("Mouse ScrollWheel"));
+        ToogleCamera();
+    }
 
+    private void ToogleCamera()
+    {
+        if (transform.position.x > 25)
+        {
+            transform.position = new Vector3(25, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x < -10)
+        {
+            transform.position = new Vector3(-10, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z > 31)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 31);
+        }
+        if (transform.position.z < -10)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+        }
     }
 
     void Zoom(float increment)
